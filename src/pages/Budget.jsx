@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
-import AddBudgetModal from "@/components/Modals/AddBudgetModal";
+import AddBudgetModal from "@/components/modals/AddBudgetModal";
 import { useBudgets } from "@/contexts/BudgetContext";
 import { 
   Plus, 
