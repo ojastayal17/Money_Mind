@@ -30,12 +30,13 @@ const Chatbot = () => {
       <button
         onClick={() => setOpen(!open)}
         className="
-          fixed bottom-6 left-6 h-16 w-16 rounded-full 
-          bg-gradient-to-r from-teal-400 to-blue-500 
+          fixed bottom-5 right-5 md:bottom-8 md:right-8 
+          h-14 w-14 md:h-16 md:w-16 
+          rounded-full bg-gradient-to-r from-teal-400 to-blue-500 
           shadow-[0_0_20px_rgba(0,255,255,0.6)]
-          flex items-center justify-center text-3xl
-          hover:scale-110 hover:shadow-[0_0_25px_rgba(0,255,255,0.9)]
-          transition-all duration-300
+          flex items-center justify-center 
+          text-2xl md:text-3xl 
+          hover:scale-110 transition-all duration-300
         "
         style={{ zIndex: 9999 }}
       >
@@ -46,32 +47,37 @@ const Chatbot = () => {
       {open && (
         <div
           className="
-            fixed bottom-28 left-6 w-96 p-4 rounded-2xl shadow-2xl 
-            backdrop-blur-xl bg-[rgba(15,15,25,0.7)]
-            border border-[rgba(255,255,255,0.1)]
+            fixed bottom-24 right-5 md:right-8 
+            w-[90vw] md:w-96 
+            p-4 rounded-2xl shadow-2xl 
+            backdrop-blur-xl bg-[rgba(15,15,25,0.8)]
+            border border-[rgba(255,255,255,0.15)]
             animate-slideUp
           "
           style={{ zIndex: 9999 }}
         >
           {/* Header */}
           <div className="flex justify-between items-center mb-3">
-            <h2 className="text-xl font-bold bg-gradient-to-r from-teal-300 to-blue-400 text-transparent bg-clip-text">
+            <h2 className="text-lg md:text-xl font-bold bg-gradient-to-r from-teal-300 to-blue-400 text-transparent bg-clip-text">
               MoneyMind Assistant
             </h2>
 
             <button
               onClick={() => setOpen(false)}
-              className="text-gray-300 hover:text-white text-2xl transition"
+              className="text-gray-300 hover:text-white text-xl transition"
             >
               ✖
             </button>
           </div>
 
           {/* Chat Window */}
-          <div className="
-            h-72 overflow-y-auto mb-3 p-2 space-y-3 
-            scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800
-          ">
+          <div
+            className="
+              max-h-[60vh] md:h-72 
+              overflow-y-auto mb-3 p-2 space-y-3 
+              scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800
+            "
+          >
             {chat.map((msg, i) => (
               <div
                 key={i}
@@ -81,7 +87,7 @@ const Chatbot = () => {
               >
                 <div
                   className={`
-                    max-w-[75%] px-4 py-2 rounded-xl text-sm leading-relaxed
+                    max-w-[80%] px-4 py-2 rounded-xl text-sm leading-relaxed
                     ${
                       msg.sender === "user"
                         ? "bg-gradient-to-r from-blue-600 to-blue-800 text-white shadow-lg"
@@ -108,7 +114,7 @@ const Chatbot = () => {
                 bg-gray-800 border border-gray-700 
                 text-white placeholder-gray-400 
                 focus:ring-2 focus:ring-blue-500 
-                outline-none
+                outline-none text-sm
               "
               placeholder="Ask something..."
             />
@@ -117,7 +123,8 @@ const Chatbot = () => {
               onClick={sendMessage}
               className="
                 px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 
-                text-white shadow-lg transition
+                text-white text-sm md:text-base 
+                shadow-lg transition
               "
             >
               Send
