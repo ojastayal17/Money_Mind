@@ -202,7 +202,7 @@ export default function useChatbot() {
 
     // Greetings
     if (["hi", "hello", "hey"].includes(msg)) {
-      return "Hello! Try: 'How should I spend 2000 on food?' or 'Can I spend 2000 on shoes?'.";
+      return "Hello! how can i help you.";
     }
 
     // Weekly
